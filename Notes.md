@@ -7,6 +7,7 @@ Science Questions:
 2. What are the time scales (5-days from Heidi H.?)?
 3. Can we trace the path of water reaching the FCR?
 4. Can we assess WQ in the channels between FL Bay/backcountry and the reefs?
+5. How are HABs affecting FCR/FKNMS? - Can we track/monitor HAB conditions and show status?
 
 
 #### Tools:
