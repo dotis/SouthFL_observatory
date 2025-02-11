@@ -27,7 +27,11 @@ Science Questions:
 #### FLH satellite products:
 1. Can use MODIS for now, but will go away soon
 2. Can use PACE (very little history)
-3. Can use S3 OLCI (need to set up ingest - can we get through CMR?)
+4. Can use S3 OLCI (L2_OC from OBPG ingest through CMR)
+ - Run FlhMci (SNAP) operator to derive FLH (from Rrs)
+ - Need to have two separate file streams (FLH and OC)
+ - We could try to calculate FLH using bandmaths as part of the mosaic operator - easiest
+ - 
 
 
 ### S3 OLCI Details/Issues:
