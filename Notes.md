@@ -28,3 +28,16 @@ Science Questions:
 1. Can use MODIS for now, but will go away soon
 2. Can use PACE (very little history)
 3. Can use S3 OLCI (need to set up ingest - can we get through CMR?)
+
+
+### S3 OLCI Details/Issues:
+1. Run /srv/pgs/rois2/gom/L1_OLCI_EFR/OLCI_L1_EFR_CMR.sh - Need to set date range to today-3 for last 3 days of data
+   - Specify dates by generating a date 2-3 days ago and match data since then - use ISO8601
+   - Unzip issue: Can unzip single full filename, but "unzip *.zip" fails - issue w/filename
+   - OR, try not unzipping - just use zipped directory as the input product to the graph
+3. Then, need run graph (similar to S2-MSI graph):
+ - Subset?
+ - FLH
+ - OC? - Could run through C2RCC or could run l2gen or could ingest S3 OLCI L2 from OBPG and grid/mosaic
+ - Easiest and most consistent to ingest S3 OLCI L2 from OBPG
+
