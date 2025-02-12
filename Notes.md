@@ -26,12 +26,22 @@ Science Questions:
 
 #### FLH satellite products:
 1. Can use MODIS for now, but will go away soon
-2. Can use PACE (very little history)
+2. Can use PACE (very little history) - This may be the best option (easiest)
+3. Could serve S3 OLCI on ERDDAP (w/o FLH); get L2 from OBPG - Do we really need this?
 4. Can use S3 OLCI (L2_OC from OBPG ingest through CMR)
- - Run FlhMci (SNAP) operator to derive FLH (from Rrs)
- - Need to have two separate file streams (FLH and OC)
- - We could try to calculate FLH using bandmaths as part of the mosaic operator - easiest
+ - Run FlhMci (SNAP) operator to derive FLH (from Rrs) - HASSLE!!
+ - Use one filestream (complicated)
+ - Graph:
+    1. Mosaic op. to ingest bands and merge/grid
+    2. Bandmaths op.(1) to create nLw (spectral) bands
+    3. FLH op. to calculcate FLH
+    4. Bandmaths op.(2) to create output bands
+ - We could try to calculate FLH using bandmaths as part of the mosaic operator - easiest (needs work)
+#### Tasks
+ - Need to clean up bash scripts (add substiutions and/or a run script)
  - 
+
+
 
 
 ### S3 OLCI Details/Issues:
