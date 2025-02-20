@@ -12,9 +12,11 @@ Science Questions:
 
 #### Tools:
 1. Sentinel-2 WQ (test C2RCC w/SFER cruise data and IRL sensor data)
-2. Sentinel-3 WQ (FLH mainly to look at blooms)
+2. PACE or other OC (S3?) anomalies to look at high Chla, turb, blooms (can we use MODA climatology?)
 3. USGS and USACE gauge data (on Quarto dash)
 4. Physical model for flow? (FVCOM?)
+5. IMERG daily precip
+6. 
 
 
 #### Dashboard (simple - Quarto/Shiny/FlexDB):
@@ -37,8 +39,15 @@ Science Questions:
     3. FLH op. to calculcate FLH
     4. Bandmaths op.(2) to create output bands
  - We could try to calculate FLH using bandmaths as part of the mosaic operator - easiest (needs work)
-#### Tasks
- - Need to clean up bash scripts (add substiutions and/or a run script)
+
+### Tasks/Issues
+ - Sample S2 WQ images to use for FDEP proposal for Y6
+ - Validate S2 WQ
+ - Set up ingest for IMERG (need Tylar's help)
+ - Set up ingest for S3 (needed?)
+ - Refine Quarto dash
+ - Extract IMERG precip in ROI polygons (SWFL, SEFL, others?)
+ - How to quantify bloom and other current conditions? Count pixels and calculate area over a threshold?
  - 
 
 
