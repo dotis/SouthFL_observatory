@@ -48,7 +48,7 @@ Science Questions:
  - Refine Quarto dash
  - Extract IMERG precip in ROI polygons (SWFL, SEFL, others?)
  - How to quantify bloom and other current conditions? Count pixels and calculate area over a threshold?
- - 
+ - Weird issue w/mosaic operator for PACE AOP (hangs on Rrs_689). Hangs on any var after Rrs_688. Issue w/length of file? Too many vars?
 
 
 
