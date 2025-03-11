@@ -19,11 +19,18 @@ Science Questions:
 6. 
 
 
-#### Dashboard (simple - Quarto/Shiny/FlexDB):
+#### Dashboard (simple - Quarto/Shiny/FlexDB/grafana):
 1. Flow from Everglades (current and recent conditions - short time series w/Clim and red/green status guage)
 2. Sentinel-2 images (most recent ~two weeks)
 3. Sentinel-3 FLH (recent) - Calculate area exceeding a threshold in recent weeks)
 4. Flow conditions - Need to use a model
+5. Could use a simple version of the FKNMS grafana dash:
+ - Show daily images (recent only)
+ - Show time series (recent only w/climatology for reference)
+   - Discharge, temp, salinity, rainfall (which areas to extract for sat or other gridded data?)
+ - Show guages to indicate current conditions: presence of blooms, high temps, low salinity
+ - 24N to 26N (or 26.5N) only (restrict to near the FKNMS)
+ - Other?
 
 
 #### FLH satellite products:
