@@ -48,6 +48,11 @@ Science Questions:
  - We could try to calculate FLH using bandmaths as part of the mosaic operator - easiest (needs work)
  - From ESA Forum, could use with nLw
  - ![image](https://github.com/user-attachments/assets/aa6ca9e5-eafa-4e7c-a53e-a2f1c892db7d)
+ - Easiest way(?!?):
+    - Mosaic and bandmaths graph on OBPG OLCI L2 data
+    - Code in FLH manually in band maths node
+    - Do we even need this? Advantages? (300m resolution); Disadvantages? (hassle)
+ 
 
 
 ### Tasks/Issues
