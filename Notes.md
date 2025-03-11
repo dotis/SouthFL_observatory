@@ -46,6 +46,9 @@ Science Questions:
     3. FLH op. to calculcate FLH
     4. Bandmaths op.(2) to create output bands
  - We could try to calculate FLH using bandmaths as part of the mosaic operator - easiest (needs work)
+ - From ESA Forum, could use with nLw
+ - ![image](https://github.com/user-attachments/assets/aa6ca9e5-eafa-4e7c-a53e-a2f1c892db7d)
+
 
 ### Tasks/Issues
  - Sample S2 WQ images to use for FDEP proposal for Y6
