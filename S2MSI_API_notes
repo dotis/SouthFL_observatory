@@ -1,0 +1,76 @@
+### Notes on use of Copernicus Data Space API 
+(scihub has been deprecated)
+
+py code from Deepseek:
+#### Get access token
+
+import requests
+
+# OAuth2 Token Endpoint
+auth_url = "https://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/token"
+
+# Your credentials (replace with your Client ID & Secret)
+client_id = "your-client-id"
+client_secret = "your-client-secret"
+
+# Request token
+response = requests.post(
+    auth_url,
+    data={
+        "grant_type": "client_credentials",
+        "client_id": client_id,
+        "client_secret": client_secret,
+    },
+    headers={"Content-Type": "application/x-www-form-urlencoded"},
+)
+
+access_token = response.json()["access_token"]
+print("Access Token:", access_token)
+
+
+
+#### Example search
+search_url = "https://catalogue.dataspace.copernicus.eu/odata/v1/Products"
+
+# Define search parameters (Bucharest, 10% max cloud cover, Jan 2024)
+params = {
+    "$filter": (
+        "Collection/Name eq 'SENTINEL-2' and "
+        "Attributes/OData.CSC.StringAttribute/any(att:att/Name eq 'productType' and att/OData.CSC.StringAttribute/Value eq 'S2MSI1C') and "
+        "ContentDate/Start ge 2024-01-01T00:00:00.000Z and "
+        "ContentDate/Start le 2024-01-10T23:59:59.999Z and "
+        "OData.CSC.Intersects(area=geography'SRID=4326;POLYGON((25.9 44.4,26.1 44.4,26.1 44.6,25.9 44.6,25.9 44.4))') and "
+        "Attributes/OData.CSC.DoubleAttribute/any(att:att/Name eq 'cloudCover' and att/OData.CSC.DoubleAttribute/Value le 10)"
+    ),
+    "$top": 10,
+}
+
+headers = {"Authorization": f"Bearer {access_token}"}
+response = requests.get(search_url, params=params, headers=headers)
+products = response.json()["value"]
+
+for product in products:
+    print(f"ID: {product['Id']}, Name: {product['Name']}, Size: {product['ContentLength'] / (1024 * 1024):.2f} MB")
+
+
+
+
+### Direct download
+
+product_id = products[0]["Id"]  # Take the first product
+download_url = f"https://catalogue.dataspace.copernicus.eu/odata/v1/Products({product_id})/$value"
+
+# Download with token
+headers = {"Authorization": f"Bearer {access_token}"}
+response = requests.get(download_url, headers=headers, stream=True)
+
+# Save to file
+with open(f"{product_id}.zip", "wb") as f:
+    for chunk in response.iter_content(chunk_size=8192):
+        f.write(chunk)
+
+print(f"Downloaded: {product_id}.zip")
+
+
+
+
