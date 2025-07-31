@@ -10,3 +10,7 @@
 2. Start with L2 and run FLH operator
  - Use L2 cloud flag
  - Need to test 
+
+#### Dates for testing
+1. 2/6/25-2/10/25 6th and 7th are the best (Looks to be HAB along WFS near Ch. Harbor and south into South WFS)
+2. 
