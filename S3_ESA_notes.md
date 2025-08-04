@@ -1,5 +1,5 @@
 ### Notes for South Florida HAB Observatory
-#### Will be used for FDEP HAB Tech RFP
+#### Could be used for red tide bloom ID and on dashboards
 
 #### Two options for processing (from ESA)
 1. Start with L1 and run FLH and C2RCC operators
